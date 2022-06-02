@@ -1,0 +1,8 @@
+logging:
+  level:
+    io.github.zhiweicoding: info
+
+easy-es:
+  address: localhost:9200
+  username:
+  password:

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.github.zhiweicoding.dao.mysql.CommonDao">
+
+<!--    <resultMap id="bookBean" type="io.github.zhiweicoding.csw.models.BookBean">-->
+<!--        <id column="book_id" property="bookId"/>-->
+<!--        <result column="factory_id" property="factoryId"/>-->
+<!--        <result column="book_name" property="bookName"/>-->
+<!--        <result column="book_year" property="bookYear"/>-->
+<!--        <result column="book_img" property="bookImg"/>-->
+<!--        <result column="book_author" property="bookAuthor"/>-->
+<!--        <result column="read_num" property="readNum"/>-->
+<!--        <result column="book_from" property="bookFrom"/>-->
+<!--        <result column="is_delete" property="isDelete"/>-->
+<!--        <result column="create_time" property="createTime"/>-->
+<!--        <result column="modify_time" property="modifyTime"/>-->
+<!--        <collection property="menuBeans" javaType="java.util.List" ofType="io.github.zhiweicoding.csw.models.MenuBean"-->
+<!--                    resultMap="menuBean"/>-->
+<!--    </resultMap>-->
+
+<!--    <resultMap id="menuBean" type="io.github.zhiweicoding.csw.models.MenuBean">-->
+<!--        <id column="menu_id" property="menuId"/>-->
+<!--        <result column="menu_name" property="menuName"/>-->
+<!--        <result column="menu_grade" property="menuGrade"/>-->
+<!--        <result column="menu_father" property="menuFather"/>-->
+<!--        <result column="menu_son" property="menuSon"/>-->
+<!--        <result column="menu_name_chain" property="menuNameChain"/>-->
+<!--        <result column="menu_id_chain" property="menuIdChain"/>-->
+<!--        <collection property="contentBeans" javaType="java.util.List" ofType="io.github.zhiweicoding.csw.models.ContentBean"-->
+<!--                    resultMap="contentBean"/>-->
+<!--        <collection property="imgBeans" javaType="java.util.List" ofType="io.github.zhiweicoding.csw.models.ImgBean"-->
+<!--                    resultMap="imgBean"/>-->
+<!--    </resultMap>-->
+
+<!--    <resultMap id="imgBean" type="io.github.zhiweicoding.csw.models.ImgBean">-->
+<!--        <id column="img_id" property="imgId"/>-->
+<!--        <result column="img_tag" property="imgTag"/>-->
+<!--        <result column="img_msg" property="imgMsg"/>-->
+<!--        <result column="org_url" property="orgUrl"/>-->
+<!--    </resultMap>-->
+
+
+</mapper>

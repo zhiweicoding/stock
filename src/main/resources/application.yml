@@ -1,0 +1,38 @@
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
+    org.springframework: info
+    io.github.zhiweicoding: info
+
+server:
+  port: 8111
+
+spring:
+  profiles:
+    active: dev
+  aop:
+    auto: true
+    proxy-target-class: true
+  application:
+    name: stock
+  config:
+    activate:
+      on-profile:
+
+easy-es:
+  global-config:
+    print-dsl: true
+    process_index_mode: manual #smoothly:平滑模式, not_smoothly:非平滑模式, manual:手动模式
+  enable: true
+  address: localhost:9200
+  username:
+  password:
+  connectTimeout: 300000
+  socketTimeout: 300000
+  requestTimeout: 300000
+  connectionRequestTimeout: 300000
+  maxConnTotal: 200
+  maxConnPerRoute: 200
+
+

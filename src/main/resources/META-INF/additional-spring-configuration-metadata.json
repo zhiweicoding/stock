@@ -1,0 +1,104 @@
+{
+  "properties": [
+    {
+      "name": "cos.secretKey",
+      "type": "java.lang.String",
+      "description": "腾讯云 cos brower的全局 secret key"
+    },
+    {
+      "name": "cos.secretId",
+      "type": "java.lang.String",
+      "description": "腾讯云 cos brower的全局 secret id"
+    },
+    {
+      "name": "cos.region",
+      "type": "java.lang.String",
+      "description": "腾讯云 cos brower的所在区域，可以是上海，北京等"
+    },
+    {
+      "name": "cos.bucket",
+      "type": "java.lang.String",
+      "description": "腾讯云 cos brower 资源桶的名称，一般一个项目一个"
+    },
+    {
+      "name": "cos.baseUrl",
+      "type": "java.lang.String",
+      "description": "腾讯云 cos brower 默认的url"
+    },
+    {
+      "name": "easy-es.enable",
+      "type": "java.lang.String",
+      "description": "是否开启EE自动配置"
+    },
+    {
+      "name": "easy-es.address",
+      "type": "java.lang.String",
+      "description": "es连接地址+端口 格式必须为ip:port,如果是集群则可用逗号隔开"
+    },
+    {
+      "name": "easy-es.username",
+      "type": "java.lang.String",
+      "description": "如果无账号密码则可不配置此行"
+    },
+    {
+      "name": "easy-es.password",
+      "type": "java.lang.String",
+      "description": "如果无账号密码则可不配置此行"
+    },
+    {
+      "name": "easy-es.schema",
+      "type": "java.lang.String",
+      "description": "默认为http"
+    },
+    {
+      "name": "easy-es.global-config.print-dsl",
+      "type": "java.lang.String",
+      "description": "开启控制台打印通过本框架生成的DSL语句,默认为开启,生产环境建议关闭(0.9.7+版本支持)"
+    },
+    {
+      "name": "easy-es.db-config.table-prefix",
+      "type": "java.lang.String",
+      "description": "索引前缀,可用于区分环境  默认为空"
+    },
+    {
+      "name": "easy-es.db-config.id-type",
+      "type": "java.lang.String",
+      "description": "id生成策略 默认为auto"
+    },
+    {
+      "name": "easy-es.db-config.field-strategy",
+      "type": "java.lang.String",
+      "description": "字段更新策略 默认为not_null"
+    },
+    {
+      "name": "easy-es.connectTimeout",
+      "type": "java.lang.String",
+      "description": "连接超时时间 单位:ms"
+    },
+    {
+      "name": "easy-es.socketTimeout",
+      "type": "java.lang.String",
+      "description": "通信超时时间 单位:ms"
+    },
+    {
+      "name": "easy-es.requestTimeout",
+      "type": "java.lang.String",
+      "description": "请求超时时间 单位:ms"
+    },
+    {
+      "name": "easy-es.connectionRequestTimeout",
+      "type": "java.lang.String",
+      "description": "连接请求超时时间 单位:ms"
+    },
+    {
+      "name": "easy-es.maxConnTotal",
+      "type": "java.lang.String",
+      "description": "最大连接数 单位:个"
+    },
+    {
+      "name": "easy-es.maxConnPerRoute",
+      "type": "java.lang.String",
+      "description": "最大连接路由数 单位:个"
+    }
+  ]
+}

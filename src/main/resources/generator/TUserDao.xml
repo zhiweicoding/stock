@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generate.TUserDao">
+  <resultMap id="BaseResultMap" type="generate.TUser">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="public_open_id" jdbcType="VARCHAR" property="publicOpenId" />
+    <result column="ali_open_id" jdbcType="VARCHAR" property="aliOpenId" />
+    <result column="tt_open_id" jdbcType="VARCHAR" property="ttOpenId" />
+    <result column="baidu_open_id" jdbcType="VARCHAR" property="baiduOpenId" />
+    <result column="is_real_name" jdbcType="INTEGER" property="isRealName" />
+    <result column="member_points_id" jdbcType="VARCHAR" property="memberPointsId" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="user_mobile" jdbcType="VARCHAR" property="userMobile" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="union_id" jdbcType="VARCHAR" property="unionId" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="type_id" jdbcType="VARCHAR" property="typeId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="notice_id" jdbcType="VARCHAR" property="noticeId" />
+    <result column="zhifubao_id" jdbcType="VARCHAR" property="zhifubaoId" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="user_type" jdbcType="VARCHAR" property="userType" />
+    <result column="remark_msg" jdbcType="VARCHAR" property="remarkMsg" />
+    <result column="is_member" jdbcType="INTEGER" property="isMember" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, open_id, public_open_id, ali_open_id, tt_open_id, baidu_open_id, is_real_name, 
+    member_points_id, member_id, nick_name, user_mobile, avatar_url, union_id, province, 
+    city, country, gender, `language`, is_delete, create_time, type_id, `password`, notice_id, 
+    zhifubao_id, real_name, user_type, remark_msg, is_member
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_user
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="generate.TUser" useGeneratedKeys="true">
+    insert into t_user (open_id, public_open_id, ali_open_id, 
+      tt_open_id, baidu_open_id, is_real_name, 
+      member_points_id, member_id, nick_name, 
+      user_mobile, avatar_url, union_id, 
+      province, city, country, 
+      gender, `language`, is_delete, 
+      create_time, type_id, `password`, 
+      notice_id, zhifubao_id, real_name, 
+      user_type, remark_msg, is_member
+      )
+    values (#{openId,jdbcType=VARCHAR}, #{publicOpenId,jdbcType=VARCHAR}, #{aliOpenId,jdbcType=VARCHAR}, 
+      #{ttOpenId,jdbcType=VARCHAR}, #{baiduOpenId,jdbcType=VARCHAR}, #{isRealName,jdbcType=INTEGER}, 
+      #{memberPointsId,jdbcType=VARCHAR}, #{memberId,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{userMobile,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, #{unionId,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{noticeId,jdbcType=VARCHAR}, #{zhifubaoId,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{userType,jdbcType=VARCHAR}, #{remarkMsg,jdbcType=VARCHAR}, #{isMember,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="generate.TUser" useGeneratedKeys="true">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="publicOpenId != null">
+        public_open_id,
+      </if>
+      <if test="aliOpenId != null">
+        ali_open_id,
+      </if>
+      <if test="ttOpenId != null">
+        tt_open_id,
+      </if>
+      <if test="baiduOpenId != null">
+        baidu_open_id,
+      </if>
+      <if test="isRealName != null">
+        is_real_name,
+      </if>
+      <if test="memberPointsId != null">
+        member_points_id,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="userMobile != null">
+        user_mobile,
+      </if>
+      <if test="avatarUrl != null">
+        avatar_url,
+      </if>
+      <if test="unionId != null">
+        union_id,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="country != null">
+        country,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="language != null">
+        `language`,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="noticeId != null">
+        notice_id,
+      </if>
+      <if test="zhifubaoId != null">
+        zhifubao_id,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="userType != null">
+        user_type,
+      </if>
+      <if test="remarkMsg != null">
+        remark_msg,
+      </if>
+      <if test="isMember != null">
+        is_member,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="publicOpenId != null">
+        #{publicOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="aliOpenId != null">
+        #{aliOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="ttOpenId != null">
+        #{ttOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="baiduOpenId != null">
+        #{baiduOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="isRealName != null">
+        #{isRealName,jdbcType=INTEGER},
+      </if>
+      <if test="memberPointsId != null">
+        #{memberPointsId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null">
+        #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarUrl != null">
+        #{avatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="unionId != null">
+        #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeId != null">
+        #{noticeId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhifubaoId != null">
+        #{zhifubaoId,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkMsg != null">
+        #{remarkMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="isMember != null">
+        #{isMember,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="generate.TUser">
+    update t_user
+    <set>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="publicOpenId != null">
+        public_open_id = #{publicOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="aliOpenId != null">
+        ali_open_id = #{aliOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="ttOpenId != null">
+        tt_open_id = #{ttOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="baiduOpenId != null">
+        baidu_open_id = #{baiduOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="isRealName != null">
+        is_real_name = #{isRealName,jdbcType=INTEGER},
+      </if>
+      <if test="memberPointsId != null">
+        member_points_id = #{memberPointsId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberId != null">
+        member_id = #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null">
+        user_mobile = #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarUrl != null">
+        avatar_url = #{avatarUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="unionId != null">
+        union_id = #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null">
+        `language` = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeId != null">
+        notice_id = #{noticeId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhifubaoId != null">
+        zhifubao_id = #{zhifubaoId,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        user_type = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="remarkMsg != null">
+        remark_msg = #{remarkMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="isMember != null">
+        is_member = #{isMember,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="generate.TUser">
+    update t_user
+    set open_id = #{openId,jdbcType=VARCHAR},
+      public_open_id = #{publicOpenId,jdbcType=VARCHAR},
+      ali_open_id = #{aliOpenId,jdbcType=VARCHAR},
+      tt_open_id = #{ttOpenId,jdbcType=VARCHAR},
+      baidu_open_id = #{baiduOpenId,jdbcType=VARCHAR},
+      is_real_name = #{isRealName,jdbcType=INTEGER},
+      member_points_id = #{memberPointsId,jdbcType=VARCHAR},
+      member_id = #{memberId,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      user_mobile = #{userMobile,jdbcType=VARCHAR},
+      avatar_url = #{avatarUrl,jdbcType=VARCHAR},
+      union_id = #{unionId,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      `language` = #{language,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      type_id = #{typeId,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      notice_id = #{noticeId,jdbcType=VARCHAR},
+      zhifubao_id = #{zhifubaoId,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=VARCHAR},
+      remark_msg = #{remarkMsg,jdbcType=VARCHAR},
+      is_member = #{isMember,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>
