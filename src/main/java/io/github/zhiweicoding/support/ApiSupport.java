@@ -3,10 +3,8 @@ package io.github.zhiweicoding.support;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import io.github.zhiweicoding.constants.KeyConstants;
-import io.github.zhiweicoding.models.InfoBean;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
-import org.apache.http.concurrent.FutureCallback;
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
@@ -19,11 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 /**

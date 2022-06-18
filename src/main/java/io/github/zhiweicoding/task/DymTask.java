@@ -10,10 +10,7 @@ import org.springframework.scheduling.support.CronTrigger;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.function.Predicate;
 
 /**
  * 动态定时任务
