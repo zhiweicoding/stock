@@ -24,6 +24,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 下载某些资源
  * @author by diaozhiwei on 2022/06/16.
  * @email diaozhiwei2k@163.com
  */
